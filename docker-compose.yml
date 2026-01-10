@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  # The Backend API Service
+  api:
+    build: .
+    container_name: risk_engine_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app  # Hot-reload: Changes in your code update the container instantly
+    environment:
+      - ENV=production
+
+  # (Optional) We could add the frontend here, but running it 
+  # locally is often easier for development.
